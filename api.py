@@ -17,12 +17,12 @@ llm = HuggingFaceEndpoint(
     task="text-generation",
     huggingfacehub_api_token=hf_token,
     temperature=0.7,
-    max_new_tokens=256
+    max_new_tokens=2
 )
 
 # Wrap it in a ChatHuggingFace instance
 model = ChatHuggingFace(llm=llm)
 
 # Invoke the model
-response = model.invoke("What is the capital of India?")
+response = model.invoke("founder of microsoft")
 print(response.content)
